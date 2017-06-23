@@ -6,11 +6,11 @@
 
 Simply integrate the OmniVirt SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
 
-## Usage
+# Usage
 
 **OmniVirt Ad Network** can be integrated into your Unity game in just few easy steps.
 
-### Get Started
+## Get Started
 
 1. **Sign up** for an account at [OmniVirt](www.omnivirt.com)
 2. **Create one or more Ad Spaces** for your app (for each Ad Space you can select different content and will get separate reporting)
@@ -18,7 +18,7 @@ Simply integrate the OmniVirt SDK into your Unity application/game and get paid 
 
 Now an Ad Space is ready. Next step is to enable the Ad on your application/game.
 
-### Add the OmniVirt SDK to your project
+## Add the OmniVirt SDK to your project
 
 1) Download [OmniVirtSDK.unitypackage](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/OmniVirtSDK.unitypackage)
 
@@ -28,7 +28,7 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 Your project will now contain all necessary files to integrate OmniVirt Ad Network in your game.
 
-### Prepare a script
+## Prepare a script
 
 First, create an empty GameObject in the scene.
 
@@ -42,7 +42,7 @@ And then, create a C# script and rename it to `VRPlayerControl`.
 
 ![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropscript.jpg)
 
-### Initialize a `VRAd` instance
+## Initialize a `VRAd` instance
 
 Open `AdNetworkControl.cs` file and add the following line in the header area.
 
@@ -78,7 +78,7 @@ public class VRPlayerControl : MonoBehaviour {
 
 **Please note that your must replace `AD_SPACE_ID` with one you got from step above.**
 
-### Load an Ad
+## Load an Ad
 
 Ad must be loaded first before it could be shown. Call `LoadAd()` like shown below to start loading.
 
@@ -95,7 +95,7 @@ Ad must be loaded first before it could be shown. Call `LoadAd()` like shown bel
 
 Ad will now be loaded **in the background** and once it is ready, `OnAdStatusChanged` will be called with `Ready` state.
 
-### Show an Ad
+## Show an Ad
 
 If you want ad to start playing automatically, just add the following code snippet to the callback function.
 
@@ -111,7 +111,7 @@ void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
 
 And it's all ... done ! Ad will now be shown on the screen.
 
-### Reload an Ad
+## Reload an Ad
 
 **`LoadAd()` is needed to be called once per ad served.** You can reload an ad to make it ready for the next session by implementing the code inside `OnAdStatusChanged` like shown below.
 
@@ -125,7 +125,7 @@ void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
 ...
 ```
 
-### Callback
+## Callback
 
 When the state of VRAd has been changed, `OnAdStatusChanged` callback function will be called with the new state in the `AdStatusChangedEventArgs` parameter.
 
@@ -149,7 +149,7 @@ There are different 5 states in total.
 
 - **AdState.Failed** - Ad could not be loaded.
 
-### Handle Back Pressed
+## Handle Back Pressed
 
 On Android, **back button** is needed to be handled to prevent unexpected behavior.
 
