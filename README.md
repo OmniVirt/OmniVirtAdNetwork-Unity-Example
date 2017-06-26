@@ -20,7 +20,7 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 ## Add the OmniVirt SDK to your project
 
-1) Download [OmniVirtSDK.unitypackage](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/OmniVirtSDK.unitypackage)
+1) Download [OmniVirtSDK.unitypackage](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/OmniVirtSDK.unitypackage)
 
 2) Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
 
