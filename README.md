@@ -109,6 +109,16 @@ void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
 ...
 ```
 
+### Show an Ad in VR Mode
+
+You can trig the ad to be displayed in VR Mode by passing a parameter in `show()` function like shown below.
+
+```csharp
+vrAd.show (Mode.On);
+```
+
+With this feature, you will be able to make Ad show with seamless experience as your VR app / game.
+
 And it's all ... done ! Ad will now be shown on the screen.
 
 ## Reload an Ad
