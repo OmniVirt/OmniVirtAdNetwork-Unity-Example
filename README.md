@@ -12,7 +12,7 @@ Simply integrate the OmniVirt SDK into your Unity application/game and get paid 
 
 ## Get Started
 
-1. **Sign up** for an account at [OmniVirt](http://www.omnivirt.com)
+1. **Sign up** for an account at [OmniVirt](https://www.omnivirt.com)
 2. **Create one or more Ad Spaces** for your app (for each Ad Space you can select different content and will get separate reporting)
 3. Keep the **AdSpace ID** assigned for further use.
 
