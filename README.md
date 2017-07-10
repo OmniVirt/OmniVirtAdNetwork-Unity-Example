@@ -1,4 +1,4 @@
-# OmniVirt Ad Network: Monetize your Unity Game with 360° Video Ad
+# OmniVirt Ad Network: Monetize your Unity Game with 360° Video Ad (iOS & Android)
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot.jpg)
 
