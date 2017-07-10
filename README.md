@@ -34,7 +34,7 @@ Currently OmniVirt VR Player for Unity is supported only on iOS and Android. So 
 
 ![Switch Platform](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/switchplatform.jpg)
 
-Please note that if you do not switch the platform, your code will not be able to be compiled.
+Please note that if you do not switch the platform, your code will not be able to compile.
 
 ## Prepare a script
 
