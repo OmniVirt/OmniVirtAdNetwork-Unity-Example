@@ -1,6 +1,6 @@
 # OmniVirt Ad Network: Monetize your Unity Game with 360° Video Ad (iOS & Android)
 
-![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot.jpg)
+![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot2.jpg)
 
 **OmniVirt Ad Network** provides you ***an advertising platform*** enables developers and publishers to monetize their apps/games with engaging VR content in seamless user experience way.
 
