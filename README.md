@@ -28,6 +28,14 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 Your project will now contain all necessary files to integrate OmniVirt Ad Network in your game.
 
+## Switch Platform
+
+Currently OmniVirt VR Player for Unity is supported only on iOS and Android. So to make it works, you need to switch platform to either iOS or Android first. To do so, click at **File -> Build Settings**, choose your target platform (iOS or Android) and then click **Switch Platform**.
+
+![Switch Platform](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/switchplatform.jpg)
+
+Please note that if you do not switch the platform, your code will not be able to compile.
+
 ## Prepare a script
 
 First, create an empty GameObject in the scene.
