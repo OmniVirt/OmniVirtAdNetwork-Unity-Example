@@ -34,7 +34,7 @@ Your project will now contain all necessary files to integrate OmniVirt Ad Netwo
 
 ## Switch Platform
 
-Currently OmniVirt VR Player for Unity is supported only on iOS and Android. So to make it works, you need to switch platform to either iOS or Android first. To do so, click at **File -> Build Settings**, choose your target platform (iOS or Android) and then click **Switch Platform**.
+Currently OmniVirt Ad Network for Unity is supported only on iOS and Android. So to make it works, you need to switch platform to either iOS or Android first. To do so, click at **File -> Build Settings**, choose your target platform (iOS or Android) and then click **Switch Platform**.
 
 ![Switch Platform](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/switchplatform.jpg)
 
