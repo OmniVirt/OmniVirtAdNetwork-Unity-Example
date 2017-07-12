@@ -46,7 +46,7 @@ First, create an empty GameObject in the scene.
 
 ![GameObject](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/emptygameobject.jpg)
 
-And then, create a C# script and rename it to `VRPlayerControl`.
+And then, create a C# script and rename it to `AdNetworkControl`.
 
 ![VRPlayerController](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/adnetworkcontrol.jpg)
 
@@ -65,7 +65,7 @@ using OmniVirt;
 Declare `VRAd` variable and initialize in `Start()` function.
 
 ```csharp
-public class VRPlayerControl : MonoBehaviour {
+public class AdNetworkControl : MonoBehaviour {
 
     VRAd vrAd;
 
