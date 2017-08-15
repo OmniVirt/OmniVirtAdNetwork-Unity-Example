@@ -1,8 +1,8 @@
-# OmniVirt Ad Network: Monetize your Unity Game with 360° Video Ad (iOS & Android)
+# OmniVirt Ad Network: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard and VR apps)
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot2.jpg)
 
-**OmniVirt Ad Network** provides you ***an advertising platform*** enables developers and publishers to monetize their apps/games with engaging VR content in seamless user experience way.
+**OmniVirt Ad Network** is ***VR Advertising Network*** which enables developers and publishers to monetize their apps/games with seamless and engaging VR experiences.
 
 Simply integrate the OmniVirt SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
 
@@ -12,7 +12,7 @@ Simply integrate the OmniVirt SDK into your Unity application/game and get paid 
 
 ## Get Started
 
-1. **Sign up** for an account at [OmniVirt](https://www.omnivirt.com)
+1. **Sign up** for an account at [OmniVirt](https://www.omnivirt.com/ad-network/)
 2. **Create one or more Ad Spaces** for your app (for each Ad Space you can select different content and will get separate reporting)
 3. Keep the **AdSpace ID** assigned for further use.
 
