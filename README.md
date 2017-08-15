@@ -26,10 +26,6 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 ![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage2.jpg)
 
-3) In Project pane, browse to **Assets -> Plugins** and choose **VRKit**. In Inspector pane, make sure that **Editor**, **iOS** and **Android** are all checked.
-
-![VRKitPlatforms](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/vrkitplatforms.jpg)
-
 Your project will now contain all necessary files to integrate OmniVirt Ad Network in your game.
 
 ## Switch Platform
@@ -114,7 +110,7 @@ If you want ad to start playing automatically, just add the following code snipp
 
 ```csharp
 ...
-void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
+void OnAdStatusChanged() {
     if (vrAd.IsReady ()) {
         vrAd.Show (false);
     }
