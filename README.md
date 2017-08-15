@@ -24,7 +24,7 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 2) Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
 
-![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage.jpg)
+![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage2.jpg)
 
 3) In Project pane, browse to **Assets -> Plugins** and choose **VRKit**. In Inspector pane, make sure that **Editor**, **iOS** and **Android** are all checked.
 
@@ -81,7 +81,7 @@ public class AdNetworkControl : MonoBehaviour {
 
     }
 
-    void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
+    void OnAdStatusChanged() {
 
     }
   
@@ -101,6 +101,7 @@ Ad must be loaded first before it could be shown. Call `LoadAd()` like shown bel
         // Register a Callback
         vrAd.AdStatusChanged += OnAdStatusChanged;
 
+        // Prepare an Ad
         vrAd.LoadAd();
     }
 ```
@@ -114,8 +115,8 @@ If you want ad to start playing automatically, just add the following code snipp
 ```csharp
 ...
 void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
-    if (vrAd.IsLoaded ()) {
-        vrAd.Show (Mode.Off);
+    if (vrAd.IsReady ()) {
+        vrAd.Show (false);
     }
 }
 ...
@@ -126,7 +127,7 @@ void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
 You can trig the ad to be displayed in VR Mode by passing a parameter in `show()` function like shown below.
 
 ```csharp
-vrAd.show (Mode.On);
+vrAd.Show (true);
 ```
 
 With this feature, you will be able to make Ad show with seamless experience as your VR app / game.
@@ -139,9 +140,17 @@ And it's all ... done ! Ad will now be shown on the screen.
 
 ```csharp
 ...
-void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
+void OnAdStatusChanged() {
     if (vrAd.IsCompleted ()) {
-        vrAd.LoadAd ();
+		// Reload an ad for next session
+		// Destroy the current VRAd instance
+		vrAd.Unload();
+		vrAd = null;
+
+		// Create a new one
+		vrAd = new VRAd (AD_SPACE_ID);
+		vrAd.AdStatusChanged += OnAdStatusChanged;
+		vrAd.LoadAd ();
     }
 }
 ...
@@ -153,8 +162,8 @@ When the state of VRAd has been changed, `OnAdStatusChanged` callback function w
 
 ```csharp
 ...
-void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
-    // New AdState could be retrieved from e.Status
+void OnAdStatusChanged() {
+    // New AdState could be retrieved from vrAd.adState
 }
 ...
 ```
