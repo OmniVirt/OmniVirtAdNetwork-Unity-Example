@@ -1,4 +1,4 @@
-# OmniVirt Ad Network: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard and VR apps)
+# OmniVirt Ad Network: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard, Gear VR, Daydream)
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot2.jpg)
 
