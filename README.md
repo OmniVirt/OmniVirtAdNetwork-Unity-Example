@@ -67,7 +67,7 @@ public class AdNetworkControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        vrAd = new VRAd (AD_SPACE_ID);
+        vrAd = new VRAd (AD_SPACE_ID); // Replace your Ad Space ID here
         // Register a Callback
         vrAd.AdStatusChanged += OnAdStatusChanged;
     }
@@ -93,7 +93,7 @@ Ad must be loaded first before it could be shown. Call `LoadAd()` like shown bel
 ```csharp
     // Use this for initialization
     void Start () {
-        vrAd = new VRAd (AD_SPACE_ID);
+        vrAd = new VRAd (AD_SPACE_ID); // Replace your Ad Space ID here
         // Register a Callback
         vrAd.AdStatusChanged += OnAdStatusChanged;
 
