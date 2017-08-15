@@ -197,4 +197,4 @@ On Android, **back button** is needed to be handled to prevent unexpected behavi
 
 # Questions?
 
-If you have any question, please don't hesitate to email us at [contact@omnivirt.com](mailto:contact@omnivirt.com) !
+If you have any question, please don't hesitate to email us at [adnetwork@omnivirt.com](mailto:adnetwork@omnivirt.com) !
