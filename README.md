@@ -195,6 +195,12 @@ On Android, **back button** is needed to be handled to prevent unexpected behavi
     }
 ```
 
+## iOS Build
+
+Bitcode is not supported on OmniVirt SDK yet. Please turn the Bitcode off by set `Build Settings -> Bitcode` to **off** for your deployment target.
+
+![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/bitcode.jpg)
+
 # Questions?
 
 If you have any question, please don't hesitate to email us at [adnetwork@omnivirt.com](mailto:adnetwork@omnivirt.com) !
