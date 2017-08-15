@@ -22,7 +22,13 @@ Content is now ready. It is time to work on Unity editor.
 
 2) Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
 
+<<<<<<< HEAD
 ![Import](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/importpackage2.jpg)
+=======
+![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage2.jpg)
+
+3) In Project pane, browse to **Assets -> Plugins** and choose **VRKit**. In Inspector pane, make sure that **Editor**, **iOS** and **Android** are all checked.
+>>>>>>> 21240e5cd9318c7c17b3634a6756e18e07a4c7a3
 
 Your project will now contain all necessary files to run OmniVirt VR Player.
 
@@ -61,14 +67,39 @@ using OmniVirt;
 The following code snippet is used to launch a VR Player.
 
 ```csharp
+<<<<<<< HEAD
 vrPlayer.LoadAndPlay (CONTENT_ID,
                       true           // Cardboard Enabled; false for non-VR mode
                       );
+=======
+public class AdNetworkControl : MonoBehaviour {
+
+    VRAd vrAd;
+
+    // Use this for initialization
+    void Start () {
+        vrAd = new VRAd (AD_SPACE_ID);
+        // Register a Callback
+        vrAd.AdStatusChanged += OnAdStatusChanged;
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+
+    void OnAdStatusChanged() {
+
+    }
+  
+}
+>>>>>>> 21240e5cd9318c7c17b3634a6756e18e07a4c7a3
 ```
 
 Replace `CONTENT_ID` with a **Content ID** got from step above to let it play the specific content you need, for example,
 
 ```csharp
+<<<<<<< HEAD
 public class VRPlayerControl : MonoBehaviour {
 
 	VRPlayer vrPlayer;
@@ -105,6 +136,31 @@ public class VRPlayerControl : MonoBehaviour {
 	void OnVRPlayerUnloaded() {
 		vrPlayer = null;		
 	}
+=======
+    // Use this for initialization
+    void Start () {
+        vrAd = new VRAd (AD_SPACE_ID);
+        // Register a Callback
+        vrAd.AdStatusChanged += OnAdStatusChanged;
+
+        // Prepare an Ad
+        vrAd.LoadAd();
+    }
+```
+
+Ad will now be loaded **in the background** and once it is ready, `OnAdStatusChanged` will be called with `Ready` state.
+
+## Show an Ad
+
+If you want ad to start playing automatically, just add the following code snippet to the callback function.
+
+```csharp
+...
+void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
+    if (vrAd.IsReady ()) {
+        vrAd.Show (false);
+    }
+>>>>>>> 21240e5cd9318c7c17b3634a6756e18e07a4c7a3
 }
 ```
 
@@ -115,10 +171,14 @@ And ... done ! It is this easy ! You can now build project and run to test the V
 Would like to earn money from your 360° content? You can create an **Ad Space** on [OmniVirt](www.omnivirt.com) and pass the **Ad Space ID** acquired to the command like shown below to enable ad on the player.
 
 ```csharp
+<<<<<<< HEAD
 vrPlayer.LoadAndPlay (CONTENT_ID,
                       AD_SPACE_ID,   // AD Space ID
                       true           // Cardboard Enabled; false for non-VR mode
                       );
+=======
+vrAd.Show (true);
+>>>>>>> 21240e5cd9318c7c17b3634a6756e18e07a4c7a3
 ```
 
 Once you set it up correctly, user will sometime see an ad among the player and that will turn into your revenue !
@@ -128,16 +188,39 @@ Once you set it up correctly, user will sometime see an ad among the player and 
 Any change on the player could be detected by registering a callback function in the pattern like this.
 
 ```csharp
+<<<<<<< HEAD
 void Start () {
     ...
     
     // Register a Callback
     vrPlayer.OnVideoEnd += OnVRPlayerEnded;
+=======
+...
+void OnAdStatusChanged() {
+    if (vrAd.IsCompleted ()) {
+		// Reload an ad for next session
+		// Destroy the current VRAd instance
+		vrAd.Unload();
+		vrAd = null;
+
+		// Create a new one
+		vrAd = new VRAd (AD_SPACE_ID);
+		vrAd.AdStatusChanged += OnAdStatusChanged;
+		vrAd.LoadAd ();
+    }
+>>>>>>> 21240e5cd9318c7c17b3634a6756e18e07a4c7a3
 }
 
 // Video Playing Completion Event
 void OnVRPlayerEnded() {
 
+<<<<<<< HEAD
+=======
+```csharp
+...
+void OnAdStatusChanged() {
+    // New AdState could be retrieved from vrAd.adState
+>>>>>>> 21240e5cd9318c7c17b3634a6756e18e07a4c7a3
 }
 ```
 
