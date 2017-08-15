@@ -29,16 +29,21 @@ public class AdNetworkController : MonoBehaviour {
 		// Disable Show Ad button
 		ShowAdButton.interactable = false;
 		// Show Ad
-		vrAd.Show (Mode.Off);
+		vrAd.Show (true);
 	}
 
-	void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
-		AppendLog("AdState Changed to " + e.Status.ToString());
-		if (vrAd.IsLoaded ()) {
+	void OnAdStatusChanged() {
+		AppendLog("AdState Changed to " + vrAd.adState);
+		if (vrAd.IsReady ()) {
 			// Enable Show Ad button once ad is ready
 			ShowAdButton.interactable = true;
-		} else if (vrAd.IsCompleted ()) {
+		} else if (vrAd.IsCompleted () || vrAd.IsFailed()) {
 			// Reload an ad for next session
+			vrAd.Unload();
+			vrAd = null;
+
+			vrAd = new VRAd (2);
+			vrAd.AdStatusChanged += OnAdStatusChanged;
 			vrAd.LoadAd ();
 			// Disable Show Ad button while loading
 			ShowAdButton.interactable = false;
@@ -47,8 +52,6 @@ public class AdNetworkController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		AdjustUIByOrientation ();
-
 		// Rotate Crate
 		Crate.transform.Rotate (1, 1.5f, 0.5f);
 
@@ -59,46 +62,6 @@ public class AdNetworkController : MonoBehaviour {
 				return;
 			// Else, quit the app
 			Application.Quit ();
-		}
-	}
-		
-	void AdjustUIByOrientation() {
-		RectTransform rectTransform;
-
-		if (Input.deviceOrientation == DeviceOrientation.LandscapeLeft || Input.deviceOrientation == DeviceOrientation.LandscapeRight) {
-			LogoImage.rectTransform.sizeDelta = new Vector2(1394 * 0.6f, 473 * 0.6f);
-			LogoImage.rectTransform.anchorMin = new Vector2 (0, 1);
-			LogoImage.rectTransform.anchorMax = new Vector2 (0, 1);
-			LogoImage.rectTransform.anchoredPosition = new Vector2 (220, -100);
-
-			rectTransform = ShowAdButton.gameObject.transform as RectTransform;
-			rectTransform.sizeDelta = new Vector2(345, 90);
-			rectTransform.anchorMin = new Vector2 (0.5f, 0);
-			rectTransform.anchorMax = new Vector2 (0.5f, 0);
-			rectTransform.anchoredPosition = new Vector2 (0, 100);
-
-			LoggerText.fontSize = 14;
-			LoggerText.rectTransform.anchoredPosition = new Vector2 (0, 200);
-
-			Crate.transform.position = new Vector3 (90, 80, 0);
-			Crate.transform.localScale = new Vector3 (120, 120, 120);
-		} else if (Input.deviceOrientation == DeviceOrientation.Portrait || Input.deviceOrientation == DeviceOrientation.PortraitUpsideDown) {
-			LogoImage.rectTransform.sizeDelta = new Vector2(1394.0f, 473.0f);
-			LogoImage.rectTransform.anchorMin = new Vector2 (0.5f, 1);
-			LogoImage.rectTransform.anchorMax = new Vector2 (0.5f, 1);
-			LogoImage.rectTransform.anchoredPosition = new Vector2 (-8, -190);
-
-			rectTransform = ShowAdButton.gameObject.transform as RectTransform;
-			rectTransform.sizeDelta = new Vector2(460, 120);
-			rectTransform.anchorMin = new Vector2 (0.5f, 0);
-			rectTransform.anchorMax = new Vector2 (0.5f, 0);
-			rectTransform.anchoredPosition = new Vector2 (0, 160);
-
-			LoggerText.fontSize = 32;
-			LoggerText.rectTransform.anchoredPosition = new Vector2 (0, 280);
-
-			Crate.transform.position = new Vector3 (0, 0, 0);
-			Crate.transform.localScale = new Vector3 (50, 50, 50);
 		}
 	}
 

@@ -1,22 +1,20 @@
-# OmniVirt Ad Network: Monetize your Unity Game with 360° Video Ad (iOS & Android)
+# OmniVirt VR Player: 360° Video Player for Unity (iOS & Android)
 
-![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot2.jpg)
+![Screenshot](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/screenshot3.jpg)
 
-**OmniVirt Ad Network** provides you ***an advertising platform*** enables developers and publishers to monetize their apps/games with engaging VR content in seamless user experience way.
-
-Simply integrate the OmniVirt SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
+**OmniVirt** makes the leading player for 360° video experiences across mobile and desktop. Upload your 360° content to OmniVirt and serve it into your app with few easy steps.
 
 # Usage
 
-**OmniVirt Ad Network** can be integrated into your Unity game in just few easy steps.
+**OmniVirt VR Player** for Unity provides you a really easy way to embed 360° content on your iOS and Android game with just few lines of code.
 
 ## Get Started
 
 1. **Sign up** for an account at [OmniVirt](https://www.omnivirt.com)
-2. **Create one or more Ad Spaces** for your app (for each Ad Space you can select different content and will get separate reporting)
-3. Keep the **AdSpace ID** assigned for further use.
+2. **Upload** your VR / 360° photo or video on [OmniVirt](https://www.omnivirt.com/).
+3. Keep the **Content ID** assigned to your content for further use.
 
-Now an Ad Space is ready. Next step is to enable the Ad on your application/game.
+Content is now ready. It is time to work on Unity editor.
 
 ## Add the OmniVirt SDK to your project
 
@@ -24,172 +22,140 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 2) Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
 
-![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage.jpg)
+![Import](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/importpackage2.jpg)
 
-3) In Project pane, browse to **Assets -> Plugins** and choose **VRKit**. In Inspector pane, make sure that **Editor**, **iOS** and **Android** are all checked.
-
-![VRKitPlatforms](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/vrkitplatforms.jpg)
-
-Your project will now contain all necessary files to integrate OmniVirt Ad Network in your game.
+Your project will now contain all necessary files to run OmniVirt VR Player.
 
 ## Switch Platform
 
-Currently OmniVirt Ad Network for Unity is supported only on iOS and Android. So to make it works, you need to switch platform to either iOS or Android first. To do so, click at **File -> Build Settings**, choose your target platform (iOS or Android) and then click **Switch Platform**.
+Currently OmniVirt VR Player for Unity is supported only on iOS and Android. So to make it works, you need to switch platform to either iOS or Android first. To do so, click at **File -> Build Settings**, choose your target platform (iOS or Android) and then click **Switch Platform**.
 
-![Switch Platform](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/switchplatform.jpg)
+![Switch Platform](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/switchplatform.jpg)
 
 Please note that if you do not switch the platform, your code will not be able to compile.
 
 ## Prepare a script
 
+You can now let you VR content played in your game with just a single line of code !
+
 First, create an empty GameObject in the scene.
 
-![GameObject](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/emptygameobject.jpg)
+![GameObject](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/emptygameobject.jpg)
 
-And then, create a C# script and rename it to `AdNetworkControl`.
+And then, create a C# script and rename it to `VRPlayerControl`.
 
-![VRPlayerController](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/adnetworkcontrol.jpg)
+![VRPlayerController](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/newcsscript2.jpg)
 
 **Drag** the script and **drop** it a created GameObject to assign it to the scene.
 
-![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropscript.jpg)
+![DragDropScript](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/Screenshots/dragdropscript.jpg)
 
-## Initialize a `VRAd` instance
+## Launch a VR Player
 
-Open `AdNetworkControl.cs` file and add the following line in the header area.
+Open `VRPlayerControl.cs` file and add the following line in the header area.
 
 ```csharp
 using OmniVirt;
 ```
 
-Declare `VRAd` variable and initialize in `Start()` function.
+The following code snippet is used to launch a VR Player.
 
 ```csharp
-public class AdNetworkControl : MonoBehaviour {
+vrPlayer.LoadAndPlay (CONTENT_ID,
+                      true           // Cardboard Enabled; false for non-VR mode
+                      );
+```
 
-    VRAd vrAd;
+Replace `CONTENT_ID` with a **Content ID** got from step above to let it play the specific content you need, for example,
 
-    // Use this for initialization
-    void Start () {
-        vrAd = new VRAd (AD_SPACE_ID);
-        // Register a Callback
-        vrAd.AdStatusChanged += OnAdStatusChanged;
-    }
+```csharp
+public class VRPlayerControl : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update () {
+	VRPlayer vrPlayer;
 
-    }
+	// Use this for initialization
+	void Start () {
+		// Create VR Player instance
+		vrPlayer = new VRPlayer ();
 
-    void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
+		// Register Callback for Video Playing Completion Event
+		vrPlayer.OnVideoEnd += OnVRPlayerEnded;
+		vrPlayer.OnUnloaded += OnVRPlayerUnloaded;
 
-    }
-  
+		// Play
+		vrPlayer.LoadAndPlay (24, true);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+	/*************************
+	 * Callback for VR Player
+	 *************************/
+
+	// Video Playing Completion Event
+	void OnVRPlayerEnded() {
+		if (vrPlayer != null)
+			vrPlayer.Unload ();
+	}
+
+	// VR Player Unloaded Event
+	void OnVRPlayerUnloaded() {
+		vrPlayer = null;		
+	}
 }
 ```
 
-**Please note that your must replace `AD_SPACE_ID` with one you got from step above.**
+And ... done ! It is this easy ! You can now build project and run to test the VR Player.
 
-## Load an Ad
+## Extra: Earn Money
 
-Ad must be loaded first before it could be shown. Call `LoadAd()` like shown below to start loading.
+Would like to earn money from your 360° content? You can create an **Ad Space** on [OmniVirt](www.omnivirt.com) and pass the **Ad Space ID** acquired to the command like shown below to enable ad on the player.
 
 ```csharp
-    // Use this for initialization
-    void Start () {
-        vrAd = new VRAd (AD_SPACE_ID);
-        // Register a Callback
-        vrAd.AdStatusChanged += OnAdStatusChanged;
-
-        vrAd.LoadAd();
-    }
+vrPlayer.LoadAndPlay (CONTENT_ID,
+                      AD_SPACE_ID,   // AD Space ID
+                      true           // Cardboard Enabled; false for non-VR mode
+                      );
 ```
 
-Ad will now be loaded **in the background** and once it is ready, `OnAdStatusChanged` will be called with `Ready` state.
+Once you set it up correctly, user will sometime see an ad among the player and that will turn into your revenue !
 
-## Show an Ad
+## Player Callback
 
-If you want ad to start playing automatically, just add the following code snippet to the callback function.
+Any change on the player could be detected by registering a callback function in the pattern like this.
 
 ```csharp
-...
-void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
-    if (vrAd.IsLoaded ()) {
-        vrAd.Show (Mode.Off);
-    }
+void Start () {
+    ...
+    
+    // Register a Callback
+    vrPlayer.OnVideoEnd += OnVRPlayerEnded;
 }
-...
-```
 
-### Show an Ad in VR Mode
+// Video Playing Completion Event
+void OnVRPlayerEnded() {
 
-You can trig the ad to be displayed in VR Mode by passing a parameter in `show()` function like shown below.
-
-```csharp
-vrAd.show (Mode.On);
-```
-
-With this feature, you will be able to make Ad show with seamless experience as your VR app / game.
-
-And it's all ... done ! Ad will now be shown on the screen.
-
-## Reload an Ad
-
-**`LoadAd()` is needed to be called once per ad served.** You can reload an ad to make it ready for the next session by implementing the code inside `OnAdStatusChanged` like shown below.
-
-```csharp
-...
-void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
-    if (vrAd.IsCompleted ()) {
-        vrAd.LoadAd ();
-    }
 }
-...
 ```
 
-## Callback
+These are the list of callback functions available.
 
-When the state of VRAd has been changed, `OnAdStatusChanged` callback function will be called with the new state in the `AdStatusChangedEventArgs` parameter.
+- **`OnVideoReady()`**
 
-```csharp
-...
-void OnAdStatusChanged(object sender, AdStatusChangedEventArgs e) {
-    // New AdState could be retrieved from e.Status
-}
-...
-```
+  Called when video is ready to play.
 
-There are different 5 states in total.
+- **`OnVideoEnd()`**
 
-- **AdState.Loading** - Ad is being loaded in the background.
+  Called when VR Player has finished playing.
 
-- **AdState.Ready** - Ad is ready to be shown. You can call `Show()` function at this state to display the loaded ad.
+- **`OnUnloaded()`**
 
-- **AdState.Showing** - Ad is being displayed.
+  Called when VR Player has been destroyed.
 
-- **AdState.Completed** - Ad display is finished.
-
-- **AdState.Failed** - Ad could not be loaded.
-
-## Handle Back Pressed
-
-On Android, **back button** is needed to be handled to prevent unexpected behavior.
-
-```csharp
-    void Update () {
-        // Handle Back Button
-        if (Input.GetKeyDown (KeyCode.Escape)) {
-            // If Ad is being shown, it will be automatically hide.
-            // Don't do anything.
-            if (vrAd.IsShowing ())
-              return;
-
-            // Else, do whatever you want, for example, quit the app
-            //Application.Quit ();
-        }
-    }
-```
 
 # Questions?
 
-If you have any question, please don't hesitate to email us at [contact@omnivirt.com](mailto:contact@omnivirt.com) !
+Please feel free to email us at [contact@omnivirt.com](mailto:contact@omnivirt.com) !
