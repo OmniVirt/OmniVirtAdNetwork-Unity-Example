@@ -1,4 +1,4 @@
-# OmniVirt Ad Network: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard and VR apps)
+# OmniVirt Ad Network: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard, Gear VR, Daydream)
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot2.jpg)
 
@@ -67,7 +67,7 @@ public class AdNetworkControl : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        vrAd = new VRAd (AD_SPACE_ID);
+        vrAd = new VRAd (AD_SPACE_ID); // Replace your Ad Space ID here
         // Register a Callback
         vrAd.AdStatusChanged += OnAdStatusChanged;
     }
@@ -93,7 +93,7 @@ Ad must be loaded first before it could be shown. Call `LoadAd()` like shown bel
 ```csharp
     // Use this for initialization
     void Start () {
-        vrAd = new VRAd (AD_SPACE_ID);
+        vrAd = new VRAd (AD_SPACE_ID); // Replace your Ad Space ID here
         // Register a Callback
         vrAd.AdStatusChanged += OnAdStatusChanged;
 
@@ -194,6 +194,12 @@ On Android, **back button** is needed to be handled to prevent unexpected behavi
         }
     }
 ```
+
+## iOS Build
+
+Bitcode is not supported on OmniVirt SDK yet. Please turn the Bitcode off by set `Build Settings -> Bitcode` to **off** for your deployment target.
+
+![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/bitcode.jpg)
 
 # Questions?
 
