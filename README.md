@@ -24,7 +24,7 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 2) Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
 
-![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage2.jpg)
+![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage3.jpg)
 
 Your project will now contain all necessary files to integrate OmniVirt Ad Network in your game.
 
