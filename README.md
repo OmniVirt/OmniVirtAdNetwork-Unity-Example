@@ -149,7 +149,7 @@ IEnumerator ReloadAd() {
 void OnAdStatusChanged() {
     if (vrAd.IsCompleted ()) {
         // Reload an ad for next session
-		StartCoroutine (ReloadAd ());
+        StartCoroutine (ReloadAd ());
     }
 }
 ...
