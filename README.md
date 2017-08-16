@@ -141,6 +141,12 @@ And it's all ... done ! Ad will now be shown on the screen.
 
 IEnumerator ReloadAd() {
 	yield return null;
+
+	if (vrAd != null) {
+		vrAd.Unload ();
+		vrAd = null;
+	}
+
 	vrAd = new VRAd (2);
 	vrAd.AdStatusChanged += OnAdStatusChanged;
 	vrAd.LoadAd ();
