@@ -17,6 +17,8 @@ public class AdNetworkController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ("OmniVirt SDK Version v" + OmniVirt.SDK.SDK_VERSION);
+
 		ShowAdButton.onClick.AddListener (OnShowAdButtonClicked);
 
 		vrAd = new VRAd (1);
