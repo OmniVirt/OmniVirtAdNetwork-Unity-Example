@@ -19,7 +19,7 @@ public class AdNetworkController : MonoBehaviour {
 	void Start () {
 		ShowAdButton.onClick.AddListener (OnShowAdButtonClicked);
 
-		vrAd = new VRAd (2);
+		vrAd = new VRAd (1);
 		vrAd.AdStatusChanged += OnAdStatusChanged;
 
 		vrAd.LoadAd ();
@@ -27,7 +27,13 @@ public class AdNetworkController : MonoBehaviour {
 
 	IEnumerator ReloadAd() {
 		yield return null;
-		vrAd = new VRAd (2);
+
+		if (vrAd != null) {
+			vrAd.Unload ();
+			vrAd = null;
+		}
+
+		vrAd = new VRAd (1);
 		vrAd.AdStatusChanged += OnAdStatusChanged;
 		vrAd.LoadAd ();
 	}
