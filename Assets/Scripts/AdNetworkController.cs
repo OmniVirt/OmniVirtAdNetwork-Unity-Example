@@ -25,13 +25,6 @@ public class AdNetworkController : MonoBehaviour {
 		vrAd.LoadAd ();
 	}
 
-	IEnumerator ReloadAd() {
-		yield return null;
-		vrAd = new VRAd (2);
-		vrAd.AdStatusChanged += OnAdStatusChanged;
-		vrAd.LoadAd ();
-	}
-
 	void OnShowAdButtonClicked() {
 		// Disable Show Ad button
 		ShowAdButton.interactable = false;
@@ -46,10 +39,12 @@ public class AdNetworkController : MonoBehaviour {
 			ShowAdButton.interactable = true;
 		} else if (vrAd.IsCompleted () || vrAd.IsFailed()) {
 			// Reload an ad for next session
-//			vrAd.Unload();
-//			vrAd = null;
+			vrAd.Unload();
+			vrAd = null;
 
-			StartCoroutine (ReloadAd ());
+			vrAd = new VRAd (2);
+			vrAd.AdStatusChanged += OnAdStatusChanged;
+			vrAd.LoadAd ();
 
 			// Disable Show Ad button while loading
 			ShowAdButton.interactable = false;
