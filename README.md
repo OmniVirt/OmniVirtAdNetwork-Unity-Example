@@ -147,7 +147,7 @@ IEnumerator ReloadAd() {
         vrAd = null;
     }
 
-    vrAd = new VRAd (2);
+    vrAd = new VRAd (AD_SPACE_ID);       // REPLACE YOUR AD_SPACE_ID HERE
     vrAd.AdStatusChanged += OnAdStatusChanged;
     vrAd.LoadAd ();
 }
