@@ -138,17 +138,24 @@ And it's all ... done ! Ad will now be shown on the screen.
 
 ```csharp
 ...
+
+IEnumerator ReloadAd() {
+    yield return null;
+
+    if (vrAd != null) {
+        vrAd.Unload ();
+        vrAd = null;
+    }
+
+    vrAd = new VRAd (2);
+    vrAd.AdStatusChanged += OnAdStatusChanged;
+    vrAd.LoadAd ();
+}
+    
 void OnAdStatusChanged() {
     if (vrAd.IsCompleted ()) {
         // Reload an ad for next session
-        // Destroy the current VRAd instance
-        vrAd.Unload();
-        vrAd = null;
-
-        // Create a new one
-        vrAd = new VRAd (AD_SPACE_ID);
-        vrAd.AdStatusChanged += OnAdStatusChanged;
-        vrAd.LoadAd ();
+        StartCoroutine (ReloadAd ());
     }
 }
 ...
