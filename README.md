@@ -48,7 +48,7 @@ And then, create a C# script and rename it to `AdNetworkControl`.
 
 ![VRPlayerController](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/adnetworkcontrol.jpg)
 
-**Drag** the script and **drop** it a created GameObject to assign it to the scene.
+**Drag** the script and **drop** it on a created GameObject to assign it to the scene.
 
 ![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropscript.jpg)
 
