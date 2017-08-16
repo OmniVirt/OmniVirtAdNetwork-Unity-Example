@@ -6,6 +6,8 @@
 
 Simply integrate the OmniVirt SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
 
+OmniVirt Ad Network could be used on **Unity 5.3 or newer**.
+
 # Usage
 
 **OmniVirt Ad Network** can be integrated into your Unity game in just few easy steps.
