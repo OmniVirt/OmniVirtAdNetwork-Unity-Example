@@ -1,16 +1,16 @@
-# OmniVirt Ad Network: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard, Gear VR, Daydream)
+# OmniVirt Ad network - Unity VR Ads: Monetize your Unity Game with 360° Video / VR Ad (iOS, Android, Cardboard, Gear VR, Daydream)
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/screenshot4.jpg)
 
-**OmniVirt Ad Network** is ***VR Advertising Network*** which enables developers and publishers to monetize their apps/games with seamless and engaging VR experiences.
+Meet OmniVirt's Unity VR Ad SDK. **OmniVirt Ad Network** is ***VR Advertising Network*** which enables developers and publishers to monetize their apps/games with seamless and engaging VR experiences.
 
-Simply integrate the OmniVirt SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
+Simply integrate the OmniVirt Unity Ad SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
 
-OmniVirt Ad Network could be used on **Unity 5.3 or newer**.
+OmniVirt Unity Ad SDK could be used on **Unity 5.3 or newer**.
 
 # Usage
 
-**OmniVirt Ad Network** can be integrated into your Unity game in just few easy steps.
+**OmniVirt Unity Ad SDK** can be integrated into your Unity game in just few easy steps.
 
 ## Get Started
 
@@ -28,7 +28,7 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 ![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage3.jpg)
 
-Your project will now contain all necessary files to integrate OmniVirt Ad Network in your game.
+Your project will now contain all necessary files to integrate OmniVirt Unity VR ads in your game.
 
 ## Switch Platform
 
