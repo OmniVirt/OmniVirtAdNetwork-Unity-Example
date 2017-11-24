@@ -204,6 +204,22 @@ On Android, **back button** is needed to be handled to prevent unexpected behavi
     }
 ```
 
+## Day Dream Controller Support
+
+Since Day Dream game controller support is required on Day Dream compatible application / game, OmniVirt SDK also provides support on this funcionality as well. You can enable it with some easy following steps.
+
+1) Import [Google VR SDK for Unity](https://github.com/googlevr/gvr-unity-sdk/releases) into your project. If your application or game is built for Day Dream, it supposes to have this SDK installed in your project already.
+
+2) Add `GvrControllerMain` and `GvrEditorEmulator` prefab to the scene.
+
+![Gvr](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/daydream_gvrscene.png)
+
+3) Add `OmniVirtGameController` script to **`GvrControllerMain`** game object. (It is important to add script to the correct one otherwise it would not work).
+
+![Add Component](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/daydream_addcomponent.png)
+
+That's all. Day Dream controller will now magically work with our VR Player in Day Dream mode !
+
 ## iOS Build
 
 Bitcode is not supported on OmniVirt SDK yet. Please turn the Bitcode off by set `Build Settings -> Bitcode` to **off** for your deployment target.
