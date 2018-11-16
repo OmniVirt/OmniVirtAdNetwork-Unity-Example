@@ -69,7 +69,7 @@ Please note that if you do not switch the platform, your code will not be able t
 
 # Integrate Billboard Ad to your app
 
-![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardadheader.jpg)
+![Header](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardadheader.jpg)
 
 Here is the steps to integrate the billboard ad to your game scene.
 
@@ -150,6 +150,9 @@ That's all! Please note that ad stat will be collected only when ad is shown for
 
 
 # Integrate Fullscreen Ad to your app
+
+![Header](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/fullscreenadheader.jpg)
+
 
 Please follow the instructions in this section to enable fullscreen ad in your app.
 
