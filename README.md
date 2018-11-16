@@ -126,7 +126,9 @@ public class BillboardAdControl : MonoBehaviour {
 
 ## Placing Billboard Ad Plane to your scene
 
-Prefab
+Billboard Ad placeholder is needed to be placed on your scene as a unit to show our loaded Billboard Ad. These placeholders come along with the SDK as **Prefabs**.
+
+![Billboard Ad Prefab](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardprefab.jpg)
 
 ## Assign Ad Plane to your script
 
