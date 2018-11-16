@@ -79,7 +79,17 @@ Before going to the next step, please make sure that you have already created an
 
 First let's prepare the script to put our logic code inside. To do so, let's create an empty GameObject in the scene.
 
+![GameObject](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/emptygameobject.jpg)
 
+And then, create a C# script and rename it to `BillboardAdControl`.
+
+![VRPlayerController](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/newcsscriptbillboardad320.jpg)
+
+**Drag** the script and **drop** it on a created GameObject to assign it to the scene.
+
+![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropbillboardad320.jpg)
+
+*Developing...*
 
 # Integrate Fullscreen Ad to your app
 
@@ -97,11 +107,11 @@ First let's prepare the script to put our logic code inside. To do so, let's cre
 
 And then, create a C# script and rename it to `AdNetworkControl`.
 
-![VRPlayerController](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/newcsscript3.jpg)
+![VRPlayerController](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/newcsscript3320.jpg?v=2)
 
 **Drag** the script and **drop** it on a created GameObject to assign it to the scene.
 
-![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropscript.jpg)
+![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropscript320.jpg)
 
 ## Initialize a `VRAd` instance
 
