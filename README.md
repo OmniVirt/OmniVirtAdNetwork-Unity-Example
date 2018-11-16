@@ -12,13 +12,13 @@ OmniVirt Unity Ad SDK could be used on **Unity 5.4 or newer**.
 
 There are two formats of Ad available in OmniVirt Unity Ad Network SDK
 
-1) **Fullscreen Ad** - Provides the skippable immersive fullscreen video ad for your game.
-
-![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/fullscreenad.jpg)
-
-2) **Billboard Ad** - Provide the billboard ad that can be shown seemlessly with your game scene.
+1) **Billboard Ad** - Provide the billboard ad that can be shown seemlessly with your game scene.
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardad.jpg)
+
+2) **Fullscreen Ad** - Provides the skippable immersive fullscreen video ad for your game.
+
+![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/fullscreenad.jpg)
 
 Now let us show you how easy you could integrate our Ad Network SDK to your game!
 
@@ -66,13 +66,28 @@ Currently OmniVirt Ad Network for Unity is supported only on iOS and Android. So
 
 Please note that if you do not switch the platform, your code will not be able to compile.
 
+
+# Integrate Billboard Ad to your app
+
+Here is the steps to integrate the billboard ad to your game scene.
+
+## Prepare the Ad Space ID
+
+Before going to the next step, please make sure that you have already created an app and an ad space with **VR Billboard** ad format with the desired orientation since Ad space ID with the correct format is required.
+
+## Prepare a script
+
+First let's prepare the script to put our logic code inside. To do so, let's create an empty GameObject in the scene.
+
+
+
 # Integrate Fullscreen Ad to your app
 
 Please follow the instructions in this section to enable fullscreen ad in your app.
 
 ## Prepare the Ad Space ID
 
-Before going to the next step, please make sure that you have already created an app and an ad space with **VR Full-Screen** ad format since Ad space ID with the correct format is required.
+As same as the billboard ad one, before going to the next step, please make sure that you have already created an app and an ad space with **VR Full-Screen** ad format since Ad space ID with the correct format is required.
 
 ## Prepare a script
 
