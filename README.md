@@ -8,9 +8,13 @@ Simply integrate the OmniVirt Unity Ad SDK into your Unity application/game and 
 
 OmniVirt Unity Ad SDK could be used on **Unity 5.4 or newer**.
 
+# Version
+
+Latest version of OmniVirt Unity Ad SDK is v2.5.3 (Nov 15, 2018)
+
 # Ad Format
 
-There are two formats of Ad available in OmniVirt Unity Ad Network SDK
+There are two formats of Ad available in OmniVirt Unity Ad SDK
 
 1) **Billboard Ad** - Provide the billboard ad that can be shown seemlessly with your game scene.
 
@@ -20,7 +24,7 @@ There are two formats of Ad available in OmniVirt Unity Ad Network SDK
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/fullscreenad.jpg)
 
-Now let us show you how easy you could integrate our Ad Network SDK to your game!
+Now let us show you how easy you could integrate our Ad SDK to your game!
 
 
 # Get Started
