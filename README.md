@@ -48,7 +48,7 @@ Do the following steps to create an app and the first ad space associated in the
 
 Now an Ad Space is ready. Next step is to enable the Ad on your application/game.
 
-## Add the OmniVirt SDK to your project
+## Import the OmniVirt SDK to your project
 
 1) Download [OmniVirtSDK.unitypackage](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/OmniVirtSDK.unitypackage)
 
@@ -89,7 +89,47 @@ And then, create a C# script and rename it to `BillboardAdControl`.
 
 ![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropbillboardad320.jpg)
 
+
+## Initialize a `BillboardAd` instance
+
+Open `BillboardAdControl.cs` file and add the following line in the header area.
+
+```csharp
+using OmniVirt;
+```
+
+Declare `BillboardAd` variable and initialize in `Start()` function.
+
+```csharp
+public class BillboardAdControl : MonoBehaviour {
+
+    public GameObject adPlane;
+
+    BillboardAd billboardAd;
+
+    // Use this for initialization
+    void Start () {
+        billboardAd = new BillboardAd(AD_SPACE_ID);
+        billboardAd.LoadAd(adPlane);
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    }
+}
+```
+
+**Please note that your must replace `AD_SPACE_ID` with one you got from step above.**
+
+## Placing Billboard Ad Plane to your scene
+
+## Assign Ad Plane to your script
+
+## Run and test
+
 *Developing...*
+
 
 # Integrate Fullscreen Ad to your app
 
