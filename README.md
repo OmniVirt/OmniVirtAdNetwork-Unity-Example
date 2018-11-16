@@ -70,9 +70,13 @@ Please note that if you do not switch the platform, your code will not be able t
 
 Please follow the instructions in this section to enable fullscreen ad in your app.
 
+## Prepare the Ad Space ID
+
+Before going to the next step, please make sure that you have already created an app and an ad space with **VR Full-Screen** ad format since Ad space ID with the correct format is required.
+
 ## Prepare a script
 
-First, create an empty GameObject in the scene.
+First let's prepare the script to put our logic code inside. To do so, let's create an empty GameObject in the scene.
 
 ![GameObject](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/emptygameobject.jpg)
 
@@ -136,7 +140,7 @@ Ad must be loaded first before it could be shown. Call `LoadAd()` like shown bel
     }
 ```
 
-Ad will now be loaded **in the background** and once it is ready, `OnAdStatusChanged` will be called with `Ready` state.
+Ad will now be loaded **in the background** and once it is ready, `OnAdStatusChanged` will be called with `Ready` state. Please note that the whole video file of the ad will be downloaded before changing the state. This will make the ad be able to play at super efficient performance in your app. Cache is also implemented so the next time the same ad is requested, it will use the local file instead of downloading the same file again.
 
 ## Show an Ad
 
@@ -162,7 +166,7 @@ vrAd.Show (true);
 
 With this feature, you will be able to make Ad show with seamless experience as your VR app / game.
 
-And it's all ... done ! Ad will now be shown on the screen.
+And that's all ... done! Please run your code and see if everything is working correctly. Expected result is **Fullscreen Ad should be shown at the place you call `Show` function.** Easy, huh? =D
 
 ## Reload an Ad
 
@@ -236,6 +240,8 @@ On Android, **back button** is needed to be handled to prevent unexpected behavi
     }
 ```
 
+# Extras
+
 ## Day Dream Controller Support
 
 Since Day Dream game controller support is required on Day Dream compatible application / game, OmniVirt SDK also provides support on this funcionality as well. You can enable it with some easy following steps.
@@ -258,7 +264,6 @@ Bitcode is not supported on OmniVirt SDK yet. Please turn the Bitcode off by set
 
 ![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/bitcode.jpg)
 
-## Create More Ad Space
 
 # Questions?
 
