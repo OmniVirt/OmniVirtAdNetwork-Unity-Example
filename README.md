@@ -124,17 +124,29 @@ public class BillboardAdControl : MonoBehaviour {
 
 **Please note that your must replace `AD_SPACE_ID` with one you got from step above.**
 
-## Placing Billboard Ad Plane to your scene
+## Place a Billboard Ad Plane to your scene
 
-Billboard Ad placeholder is needed to be placed on your scene as a unit to show our loaded Billboard Ad. These placeholders come along with the SDK as **Prefabs**.
+Billboard Ad plane is needed to be placed on your scene as a unit to show our loaded Billboard Ad. These planes are come along with the SDK as **Prefabs**. The horizontal one is called `OmniVirtBillboardAdHorizontalPlane` while the vertical one is `OmniVirtBillboardAdHorizontalPlane`.
 
 ![Billboard Ad Prefab](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardprefab.jpg)
 
+Now just drag a Prefab with orientation corresponding to the ad space format you created previously to the scene.
+
 ## Assign Ad Plane to your script
+
+Now drag the plane to the BillboardAdControl script added to empty GameObject previously.
+
+![Assign Plane to Script](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/assignplanetoscript.jpg)
+
+Done!
 
 ## Run and test
 
-*Developing...*
+If you do everything correctly, Billboard Ad should now be shown on the plane placed in your scene.
+
+![Billboard Ad Result](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardadresult.jpg)
+
+That's all! Please note that ad stat will be collected only when ad is shown for more than 10% of screen space so try to place the ad plane at the place that user may walk pass frequent to maximize the ad performance.
 
 
 # Integrate Fullscreen Ad to your app
