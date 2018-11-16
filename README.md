@@ -69,6 +69,8 @@ Please note that if you do not switch the platform, your code will not be able t
 
 # Integrate Billboard Ad to your app
 
+![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardadheader.jpg)
+
 Here is the steps to integrate the billboard ad to your game scene.
 
 ## Prepare the Ad Space ID
@@ -123,6 +125,8 @@ public class BillboardAdControl : MonoBehaviour {
 **Please note that your must replace `AD_SPACE_ID` with one you got from step above.**
 
 ## Placing Billboard Ad Plane to your scene
+
+Prefab
 
 ## Assign Ad Plane to your script
 
