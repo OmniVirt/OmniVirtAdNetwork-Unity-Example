@@ -21,7 +21,7 @@ public class AdNetworkController : MonoBehaviour {
 
 		ShowAdButton.onClick.AddListener (OnShowAdButtonClicked);
 
-		vrAd = new VRAd (1);
+		vrAd = new VRAd (1622);
 		vrAd.AdStatusChanged += OnAdStatusChanged;
 
 		vrAd.LoadAd ();

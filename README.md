@@ -2,7 +2,7 @@
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/cover5.jpg)
 
-Meet the OmniVirt's Unity VR Ad SDK. **OmniVirt Ad Network** is ***VR Advertising Network*** which enables developers and publishers to monetize their apps/games with seamless and engaging VR experiences.
+Meet the OmniVirt's Unity VR Ad SDK. **OmniVirt Ad Network** is **_VR Advertising Network_** which enables developers and publishers to monetize their apps/games with seamless and engaging VR experiences.
 
 Simply integrate the OmniVirt Unity Ad SDK into your Unity application/game and get paid for presenting sponsored 360° video experiences and/or in-game billboard ad to your users. Backfill your inventory with premium CPM experiences from OmniVirt’s network of advertisers. We support both 360° and 2D video ads inside VR apps.
 
@@ -16,16 +16,15 @@ Latest version of OmniVirt Unity Ad SDK is v2.5.3 (Nov 15, 2018)
 
 There are two formats of Ad available in OmniVirt Unity Ad SDK
 
-1) **Billboard Ad** - Provide the billboard ad that can be shown seemlessly with your game scene.
+1. **Billboard Ad** - Provide the billboard ad that can be shown seemlessly with your game scene.
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/billboardad.jpg)
 
-2) **Fullscreen Ad** - Provides the skippable immersive fullscreen video ad for your game.
+2. **Fullscreen Ad** - Provides the skippable immersive fullscreen video ad for your game.
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/fullscreenad.jpg)
 
 Now let us show you how easy you could integrate our Ad SDK to your game!
-
 
 # Get Started
 
@@ -42,11 +41,11 @@ Do the following steps to create an app and the first ad space associated in the
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/appdetails.jpg)
 
-4. Fill in your first Ad Space details, choose the Ad Format you wish to use for this Ad Space. If you want to go for the fullscreen ad one, please choose *VR Full-Screen*. In case you want to integrate the billboard ad, choose the orientation that fit your ad unit in the scene best either horizontal or vertical one. Please note that you can create more Ad Space for your app later. This is just the first one. After everything is filled, click at **Finish**
+4. Fill in your first Ad Space details, choose the Ad Format you wish to use for this Ad Space. If you want to go for the fullscreen ad one, please choose _VR Full-Screen_. In case you want to integrate the billboard ad, choose the orientation that fit your ad unit in the scene best either horizontal or vertical one. Please note that you can create more Ad Space for your app later. This is just the first one. After everything is filled, click at **Finish**
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/adspacedetails.jpg)
 
-5. Keep the **AdSpace ID** assigned for further use. *Don't use the number being shown here, please use yours otherwise the ad revenue will not go to your account.*
+5. Keep the **AdSpace ID** assigned for further use. _Don't use the number being shown here, please use yours otherwise the ad revenue will not go to your account._
 
 ![Screenshot](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/getadspaceid.jpg)
 
@@ -54,9 +53,9 @@ Now an Ad Space is ready. Next step is to enable the Ad on your application/game
 
 ## Import the OmniVirt SDK to your project
 
-1) Download [OmniVirtSDK.unitypackage](https://github.com/OmniVirt/OmniVirtVRPlayer-Unity-Example/raw/master/OmniVirtSDK.unitypackage)
+1. Download [OmniVirtSDK.unitypackage](https://static.omnivirt.com/sdk/unity/v2.5.4/OmniVirtSDK.unitypackage)
 
-2) Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
+2. Import it to your Unity project via **Assets -> Import Package -> Custom Package** menu.
 
 ![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/importpackage3.jpg)
 
@@ -69,7 +68,6 @@ Currently OmniVirt Ad Network for Unity is supported only on iOS and Android. So
 ![Switch Platform](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/switchplatform.jpg)
 
 Please note that if you do not switch the platform, your code will not be able to compile.
-
 
 # Integrate Billboard Ad to your app
 
@@ -94,7 +92,6 @@ And then, create a C# script and rename it to `BillboardAdControl`.
 **Drag** the script and **drop** it on a created GameObject to assign it to the scene.
 
 ![DragDropScript](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/dragdropbillboardad320.jpg)
-
 
 ## Initialize a `BillboardAd` instance
 
@@ -152,11 +149,9 @@ If you do everything correctly, Billboard Ad should now be shown on the plane pl
 
 That's all! Please note that ad stat will be collected only when ad is shown for more than 10% of screen space so try to place the ad plane at the place that user may walk pass frequent to maximize the ad performance.
 
-
 # Integrate Fullscreen Ad to your app
 
 ![Header](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/fullscreenadheader.jpg)
-
 
 Please follow the instructions in this section to enable fullscreen ad in your app.
 
@@ -208,7 +203,7 @@ public class AdNetworkControl : MonoBehaviour {
     void OnAdStatusChanged() {
 
     }
-  
+
 }
 ```
 
@@ -277,7 +272,7 @@ IEnumerator ReloadAd() {
     vrAd.AdStatusChanged += OnAdStatusChanged;
     vrAd.LoadAd ();
 }
-    
+
 void OnAdStatusChanged() {
     if (vrAd.IsCompleted ()) {
         // Reload an ad for next session
@@ -336,13 +331,13 @@ On Android, **back button** is needed to be handled to prevent unexpected behavi
 
 Since Day Dream game controller support is required on Day Dream compatible application / game, OmniVirt SDK also provides support on this funcionality as well. You can enable it with some easy following steps.
 
-1) Import [Google VR SDK for Unity](https://github.com/googlevr/gvr-unity-sdk/releases) into your project. If your application or game is built for Day Dream, it supposes to have this SDK installed in your project already.
+1. Import [Google VR SDK for Unity](https://github.com/googlevr/gvr-unity-sdk/releases) into your project. If your application or game is built for Day Dream, it supposes to have this SDK installed in your project already.
 
-2) Add `GvrControllerMain` and `GvrEditorEmulator` prefab to the scene.
+2. Add `GvrControllerMain` and `GvrEditorEmulator` prefab to the scene.
 
 ![Gvr](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/daydream_gvrscene.png)
 
-3) Add `OmniVirtGameController` script to **`GvrControllerMain`** game object. (It is important to add script to the correct one otherwise it would not work).
+3. Add `OmniVirtGameController` script to **`GvrControllerMain`** game object. (It is important to add script to the correct one otherwise it would not work).
 
 ![Add Component](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/daydream_addcomponent2.png)
 
@@ -353,7 +348,6 @@ That's all. Day Dream controller will now magically work with our VR Player in D
 Bitcode is not supported on OmniVirt SDK yet. Please turn the Bitcode off by set `Build Settings -> Bitcode` to **off** for your deployment target.
 
 ![Import](https://github.com/OmniVirt/OmniVirtAdNetwork-Unity-Example/raw/master/Screenshots/bitcode.jpg)
-
 
 # Questions?
 
